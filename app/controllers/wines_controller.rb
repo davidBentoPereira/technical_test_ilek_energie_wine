@@ -3,7 +3,20 @@ class WinesController < ApplicationController
 
   # GET /wines
   def index
-    @wines = Wine.all.sort_by(&:average_review).reverse.as_json(methods: :average_review)
+    min_price = params[:min_price]
+    max_price = params[:max_price]
+
+    @wines = Wine.all
+
+    if min_price.present? && max_price.present?
+      @wines = @wines.where(price: min_price..max_price)
+    elsif min_price.present?
+      @wines = @wines.where("price >= ?", min_price)
+    elsif max_price.present?
+      @wines = @wines.where("price <= ?", max_price)
+    end
+
+    @wines = @wines.sort_by(&:average_review).reverse.as_json(methods: :average_review)
 
     render json: @wines
   end
