@@ -3,14 +3,14 @@ class WinesController < ApplicationController
 
   # GET /wines
   def index
-    @wines = Wine.all
+    @wines = Wine.all.as_json(methods: :average_review)
 
     render json: @wines
   end
 
   # GET /wines/1
   def show
-    render json: @wine
+    render json: @wine.as_json(methods: :average_review)
   end
 
   # POST /wines
