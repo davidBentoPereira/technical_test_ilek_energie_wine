@@ -3,7 +3,7 @@ class WinesController < ApplicationController
 
   # GET /wines
   def index
-    @wines = Wine.all.as_json(methods: :average_review)
+    @wines = Wine.all.sort_by(&:average_review).reverse.as_json(methods: :average_review)
 
     render json: @wines
   end
