@@ -15,7 +15,7 @@ end
 10.times do
   Wine.create!(
     name: Faker::Commerce.product_name,
-    price: Faker::Commerce.price,
+    price: Faker::Commerce.price.to_i * 100,
     description: Faker::Lorem.sentences(number: 3).join(" ")
   )
 end
