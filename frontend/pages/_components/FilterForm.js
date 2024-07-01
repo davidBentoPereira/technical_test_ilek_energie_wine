@@ -18,7 +18,7 @@ export default function FilterForm({fetchWines}) {
   return (
     <div className="text-gray-700 flex space-x-2 mb-8">
       <div>
-        <label htmlFor="minPrice" className="text-white text-sm font-bold mb-2">Minimum Price: </label>
+        <label htmlFor="minPrice" className="text-white text-sm font-bold mb-2">Minimum Price (€): </label>
         <input type="number" id="minPrice" name="minPrice" placeholder="Min Price"
                value={minPrice}
                onChange={handleMinPriceChange}
@@ -26,7 +26,7 @@ export default function FilterForm({fetchWines}) {
         />
       </div>
       <div>
-        <label htmlFor="minPrice" className="text-white text-sm font-bold mb-2">Minimum Price: </label>
+        <label htmlFor="minPrice" className="text-white text-sm font-bold mb-2">Maximum Price (€): </label>
         <input type="number" id="maxPrice" name="maxPrice" placeholder="Max Price"
                value={maxPrice}
                onChange={handleMaxPriceChange}
