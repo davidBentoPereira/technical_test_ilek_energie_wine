@@ -1,24 +1,34 @@
-# README
+# Energie Vin
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is my technical test for the company Ilek.
 
-Things you may want to cover:
+## Information
 
-* Ruby version
+This project is made of a Backend running on Ruby on Rails and a frontend made with Next.JS (React).
+The next.js app is located in the `frontend/` directory at the project's root.
 
-* System dependencies
+I decided to put both Backend and Frontend in the same git repository for more convenience.
 
-* Configuration
+This project is just a basic demo coded quickly to be a support during the live interview. With more time, the app should include authentication, tests, code optimized for performances, linters, etc... 
 
-* Database creation
+## Setup
 
-* Database initialization
+```bash
+# 1. Pull down the app from version control
+git clone git@github.com:davidBentoPereira/technical_test_ilek_energie_wine.git
+cd technical_test_ilek_energie_wine
 
-* How to run the test suite
+# 2. Create the database, run the migrations and seed the DB (make sure you have Postgres running)
+rails db:setup
 
-* Services (job queues, cache servers, search engines, etc.)
+# 4. Run the Backend
+rails server
 
-* Deployment instructions
+# 5. Install the depedencies for the frontend
+cd frontend
+npm install
 
-* ...
+# 6. Run the Frontend
+cd frontend
+npm run dev
+```

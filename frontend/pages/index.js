@@ -2,7 +2,6 @@ import { useState, useEffect} from 'react'
 import Wines from '@/pages/_components/Wines'
 import FilterForm from "@/pages/_components/FilterForm";
 
-// export default function Home({wines}) {
 export default function Home() {
   const [wines, setWines] = useState([])
 
@@ -15,8 +14,8 @@ export default function Home() {
 
     if (minPrice || maxPrice) {
       const params = new URLSearchParams();
-      if (minPrice) { params.append('min_price', minPrice * 100); } // add "00" to convert back in cents
-      if (maxPrice) { params.append('max_price', maxPrice * 100); } // add "00" to convert back in cents
+      if (minPrice) { params.append('min_price', minPrice * 100); }
+      if (maxPrice) { params.append('max_price', maxPrice * 100); }
       url += `?${params.toString()}`;
     }
 
